@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Heaven - Ecommerce</title>
+    <link rel="stylesheet" href="ecom.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Coffee Heaven ☕</div>
+        <input type="text" id="search-bar" placeholder="Search for coffee...">
+        <div class="cart">🛒 Cart <span id="cart-count">0</span></div>
+        <div class="menu-container">
+        <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    
+        <div id="menu" class="menu">
+            <button class="close-btn" onclick="toggleMenu()">✖</button>
+            <h2>Cart Items</h2>
+            <ul id="cartItems"></ul>
+            <h2>Bought Items</h2>
+            <ul id="boughtItems"></ul>
+        </div>
+    </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#coffees">Coffees</a></li>
+            <li><a href="#coffee-powder">Coffee Powder & Beans</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Image Slider -->
+    <div class="slider">
+        <div class="slider-wrapper">
+            <img src="images/espresso.jpeg" alt="Espresso">
+            <img src="images/cappuccino.jpeg" alt="Cappuccino">
+            <img src="images/latte.jpeg" alt="Latte">
+            <img src="images/mocha.jpeg" alt="Mocha">
+            <img src="images/americano.jpeg" alt="Americano">
+            <img src="images/espresso.jpeg" alt="Espresso">
+            <img src="images/cappuccino.jpeg" alt="Cappuccino">
+            <img src="images/latte.jpeg" alt="Latte">
+            <img src="images/mocha.jpeg" alt="Mocha">
+            <img src="images/americano.jpeg" alt="Americano">
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div>
+        <h2>Welcome to Coffee Heaven</h2>
+        <p>Discover the best coffee flavors from around the world.</p>
+    </div>
+    </section>
+
+     <!-- Coffees Section (Prepared Coffees - Online Order) -->
+     <section id="coffees">
+        <h2 class="font">Order Freshly Brewed Coffee</h2>
+        <div class="product-grid">
+            <div class="product"><img src="images/espresso.jpeg"><h3>Espresso</h3><p>$5.99</p><button class="order-now" onclick="orderNow('Espresso', 5.99, 'images/espresso.jpeg')">Order Now</button></div>
+            <div class="product"><img src="images/cappuccino.jpeg"><h3>Cappuccino</h3><p>$6.49</p><button class="order-now" onclick="orderNow('Cappuccino', 6.49, 'images/cappuccino.jpeg')">Order Now</button></div>
+            <div class="product"><img src="images/latte.jpeg"><h3>Latte</h3><p>$5.99</p><button class="order-now" onclick="orderNow('Latte', 5.99, 'images/latte.jpeg')">Order Now</button></div>
+            <div class="product"><img src="images/mocha.jpeg"><h3>Mocha</h3><p>$6.99</p><button class="order-now" onclick="orderNow('Mocha', 6.99, 'images/mocha.jpeg')">Order Now</button></div>
+
+            <div class="product"><img src="images/americano.jpeg"><h3>Americano</h3><p>$4.99</p><button class="order-now" onclick="orderNow('Americano', 4.99, 'images/americano.jpeg')">Order Now</button></div>
+            <div class="product"><img src="images/macchiato.jpeg"><h3>Macchiato</h3><p>$6.29</p><button class="order-now" onclick="orderNow('Macchiato', 6.29, 'images/macchiato.jpeg')">Order Now</button></div>
+            <div class="product"><img src="images/iced_caramel.jpeg"><h3>Flat White</h3><p>$5.49</p><button class="order-now" onclick="orderNow('Flat White', 5.49, 'images/iced_caramel.jpeg')">Order Now</button></div>
+            <div class="product"><img src="images/iced_mocha.jpeg"><h3>Cortado</h3><p>$5.79</p><button class="order-now" onclick="orderNow('Cortado', 5.79, 'images/iced_mocha.jpeg')">Order Now</button></div>
+        </div>
+    </section>
+
+    <!-- Coffee Powder & Beans Section -->
+    <section id="coffee-powder">
+        <h2 class="font">Buy Coffee Powder & Beans</h2>
+        <div class="product-grid">
+            <div class="product"><img src="images/Beans1.jpeg"><h3>Arabica Beans</h3><p>$12.99</p><button class="add-to-cart" onclick="addToCart('Arabica Beans', 12.99, 'images/Beans1.jpeg')">Add to Cart</button>
+                <button class="order-now" onclick="orderNow('Arabica Beans', 12.99, 'images/Beans1.jpeg')">Buy Now</button></div>
+            <div class="product"><img src="images/Beans2.jpeg"><h3>Robusta Beans</h3><p>$9.99</p><button class="add-to-cart" onclick="addToCart('Robusta Beans', 12.99, 'images/Beans2.jpeg')">Add to Cart</button>
+                <button class="order-now" onclick="orderNow('Robusta Beans', 12.99, 'images/Beans2.jpeg')">Buy Now</button></div>
+            <div class="product"><img src="images/Beans3.jpeg"><h3>House Blend</h3><p>$10.99</p><button class="add-to-cart" onclick="addToCart('House Blend', 12.99, 'images/Beans3.jpeg')">Add to Cart</button>
+                <button class="order-now" onclick="orderNow('House Blend', 12.99, 'images/Beans3.jpeg')">Buy Now</button></div>
+            <div class="product"><img src="images/Beans4.jpeg"><h3>Decaf Coffee</h3><p>$11.49</p><button class="add-to-cart" onclick="addToCart('Decaf Coffee', 12.99, 'images/Beans4.jpeg')">Add to Cart</button>
+                <button class="order-now" onclick="orderNow('Decaf Coffee', 12.99,'images/Beans4.jpeg')">Buy Now</button></div>
+
+            <div class="product"><img src="images/powder1.jpeg"><h3>Colombian Coffee</h3><p>$13.99</p><button class="add-to-cart" onclick="addToCart('Colombian Coffee', 12.99, 'images/powder1.jpeg')">Add to Cart</button>
+                <button class="order-now" onclick="orderNow('Colombian Coffee', 12.99, 'images/powder1.jpeg')">Buy Now</button></div>
+            <div class="product"><img src="images/powder2.jpeg"><h3>Ethiopian Coffee</h3><p>$14.49</p><button class="add-to-cart" onclick="addToCart('Ethiopian Coffee', 12.99, 'images/powder2.jpeg')">Add to Cart</button>
+                <button class="order-now" onclick="orderNow('Ethiopian Coffee', 12.99, 'images/powder2.jpeg')">Buy Now</button></div>
+            <div class="product"><img src="images/powder3.jpeg"><h3>Sumatra Coffee</h3><p>$12.79</p><button class="add-to-cart" onclick="addToCart('Sumatra Coffee', 12.99, 'images/powder3.jpeg')">Add to Cart</button>
+                <button class="order-now" onclick="orderNow('Sumatra Coffee', 12.99, 'images/powder3.jpeg')">Buy Now</button></div>
+            <div class="product"><img src="images/powder4.jpeg"><h3>Kona Coffee</h3><p>$15.99</p><button class="add-to-cart" onclick="addToCart('Kona Coffee', 12.99, 'images/powder4.jpeg')">Add to Cart</button>
+                <button class="order-now" onclick="orderNow('Kona Coffee', 12.99, 'images/powder4.jpeg')">Buy Now</button></div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2 class="font">About Us</h2>
+        <p>We are passionate coffee lovers, delivering the best coffee experience.</p>
+        <img src="images/shop.jpg" alt="Coffee Shop">
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2 class="font">Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <!-- Footer -->
+     <footer>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><img src="images/facebook.jpeg" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram.jpeg" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Coffee Heaven | All rights reserved.</p>
+     </footer>
+
+    <script src="ecom.js"></script>
+</body>
+</html>
